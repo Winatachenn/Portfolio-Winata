@@ -65,18 +65,21 @@ export default function Projects() {
           <p className="text-gray-500 text-lg">Highlight projects (Apps, Games, AI) 2023-2025</p>
         </div>
         <Link
-            href="https://github.com/username"
-            target="_blank"
-            className="group hidden md:flex items-center"
-          >
-            <ArrowRight
-              className="w-10 h-10 text-purple-500 -rotate-45
-                        transition-all duration-300
-                        group-hover:translate-x-2
-                        group-hover:-translate-y-2
-                        group-hover:text-purple-400"
-            />
-          </Link>
+          href="https://github.com/username"
+          target="_blank"
+          className="group hidden md:flex items-center"
+        >
+        <div>
+          <p className="text-gray-500 text-lg">More Projects</p>
+        </div>
+          <ArrowRight
+            className="w-10 h-10 text-purple-500 -rotate-45
+                      transition-all duration-300
+                      group-hover:translate-x-2
+                      group-hover:-translate-y-2
+                      group-hover:text-purple-400"
+          />
+        </Link>
       </motion.div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
