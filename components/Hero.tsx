@@ -1,9 +1,8 @@
 "use client";
 import Link from "next/link";
-import { Github, Linkedin, Mail } from "lucide-react";
-import { motion, Variants } from "framer-motion"; // <-- 1. Tambahkan 'Variants' di sini
+import { Github, Linkedin, Mail, FileText } from "lucide-react"; // Tambah FileText
+import { motion, Variants } from "framer-motion";
 
-// 2. Tambahkan ': Variants' setelah nama variabel
 const fadeInUp: Variants = {
   hidden: { opacity: 0, y: 40 },
   visible: { 
@@ -13,7 +12,6 @@ const fadeInUp: Variants = {
   }
 };
 
-// 3. Tambahkan ': Variants' di sini juga biar aman
 const staggerContainer: Variants = {
   hidden: { opacity: 0 },
   visible: { 
@@ -43,25 +41,44 @@ export default function Hero() {
         </motion.h1>
         
         <motion.p variants={fadeInUp} className="text-xl md:text-2xl text-gray-400 max-w-2xl leading-relaxed pt-4">
-          Informatics Student at <span className="text-white font-medium">Universitas Multimedia Nusantara</span>. Passionate about Front-End, Mobile & Web Development.
+          Informatics Student at <span className="text-white font-medium">Universitas Multimedia Nusantara</span>. Passionate about Front-End, Mobile Development & AI.
         </motion.p>
       </div>
       
-      <motion.div variants={fadeInUp} className="flex gap-4 pt-8">
-        {[
-          { icon: Github, href: "https://github.com/Winatachenn" },
-          { icon: Linkedin, href: "https://linkedin.com/in/winatachen" },
-          { icon: Mail, href: "mailto:winata2005chen@gmail.com" }
-        ].map((social, i) => (
-          <Link 
-            key={i} 
-            href={social.href} 
-            target="_blank"
-            className="p-4 bg-white/5 rounded-full hover:bg-white/10 transition border border-white/10 hover:border-purple-500/50 hover:text-purple-400"
-          >
-            <social.icon className="w-6 h-6" />
-          </Link>
-        ))}
+      <motion.div variants={fadeInUp} className="flex flex-wrap items-center gap-6 pt-8">
+        
+        {/* TOMBOL DOWNLOAD CV */}
+        {/* Pastikan file cv_winata.pdf ada di folder public */}
+        <a 
+          href="/cv_winata.pdf" 
+          download="CV_Winata_Chen.pdf"
+          className="px-8 py-4 rounded-full bg-white text-black font-bold text-lg hover:bg-gray-200 transition flex items-center gap-2 group"
+        >
+          <FileText className="w-5 h-5 group-hover:-translate-y-1 transition-transform" />
+          Download CV
+        </a>
+
+        {/* Divider Kecil (Garis) */}
+        <div className="hidden md:block w-px h-10 bg-white/10"></div>
+
+        {/* SOCIAL LINKS */}
+        <div className="flex gap-4">
+          {[
+            { icon: Github, href: "https://github.com/Winatachenn" },
+            // UPDATE LINK LINKEDIN DI BAWAH INI 👇
+            { icon: Linkedin, href: "https://www.linkedin.com/in/winata-chen-9b513b28a/" }, 
+          ].map((social, i) => (
+            <Link 
+              key={i} 
+              href={social.href} 
+              target="_blank"
+              className="p-4 bg-white/5 rounded-full hover:bg-white/10 transition border border-white/10 hover:border-purple-500/50 hover:text-purple-400"
+            >
+              <social.icon className="w-6 h-6" />
+            </Link>
+          ))}
+        </div>
+        
       </motion.div>
     </motion.section>
   );

@@ -24,7 +24,7 @@ export default function Footer() {
           <span>© 2026 Winata Chen. All rights reserved.</span>
           <div className="flex gap-8">
               <Link href="https://github.com/Winatachenn" target="_blank" className="hover:text-white transition cursor-pointer">Github</Link>
-              <Link href="https://linkedin.com/in/winatachen" target="_blank" className="hover:text-white transition cursor-pointer">LinkedIn</Link>
+              <Link href="https://www.linkedin.com/in/winata-chen-9b513b28a/" target="_blank" className="hover:text-white transition cursor-pointer">LinkedIn</Link>
           </div>
         </div>
 
