@@ -1,6 +1,6 @@
 "use client";
 import Link from "next/link";
-import { Github, Linkedin, Mail, FileText } from "lucide-react"; // Tambah FileText
+import { Github, Linkedin, FileText } from "lucide-react"; // Tambah FileText
 import { motion, Variants } from "framer-motion";
 
 const fadeInUp: Variants = {
