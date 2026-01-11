@@ -46,7 +46,8 @@ export default function TechStack() {
   const [activeTab, setActiveTab] = useState("languages");
 
   return (
-    <section className="py-20 relative">
+      <section className="py-20 relative">
+      <section id="techstack" className="py-20 relative"></section>
       <div className="text-center mb-12 space-y-4">
         <h2 className="text-4xl md:text-5xl font-bold text-white tracking-tight">
           Tech Stack

@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { motion, AnimatePresence, Variants } from "framer-motion"; // <-- 1. Import Variants
+import { motion, AnimatePresence, Variants } from "framer-motion";
 import { Menu, X } from "lucide-react";
 
 export default function Navbar() {
@@ -10,6 +10,7 @@ export default function Navbar() {
 
   const navLinks = [
     { name: "About", href: "#about" },
+    { name: "Tech Stack", href: "#techstack" }, 
     { name: "Projects", href: "#projects" },
     { name: "Contact", href: "#contact" },
   ];
