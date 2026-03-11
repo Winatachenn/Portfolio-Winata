@@ -23,8 +23,8 @@ export default function Footer() {
         <div className="flex flex-col md:flex-row justify-between items-center gap-6 text-gray-600 text-sm border-t border-white/5 pt-8">
           <span>© 2026 Winata Chen. All rights reserved.</span>
           <div className="flex gap-8">
-              <Link href="https://github.com/Winatachenn" target="_blank" className="hover:text-white transition cursor-pointer">Github</Link>
-              <Link href="https://www.linkedin.com/in/winata-chen-9b513b28a/" target="_blank" className="hover:text-white transition cursor-pointer">LinkedIn</Link>
+              <Link href="https://github.com/Winatachenn" target="_blank" rel="noopener noreferrer" className="hover:text-white transition cursor-pointer">Github</Link>
+              <Link href="https://www.linkedin.com/in/winata-chen-9b513b28a/" target="_blank" rel="noopener noreferrer" className="hover:text-white transition cursor-pointer">LinkedIn</Link>
           </div>
         </div>
 

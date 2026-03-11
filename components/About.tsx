@@ -5,9 +5,9 @@ import Lanyard from "./Lanyard"; // <-- Import komponen Lanyard
 export default function About() {
   return (
     <section id="about" className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-stretch py-20">
-      
+
       {/* Kolom Kiri: Teks About Me (Diperbesar & Rapi) */}
-      <motion.div 
+      <motion.div
         initial={{ opacity: 0, x: -50 }}
         whileInView={{ opacity: 1, x: 0 }}
         viewport={{ once: true }}
@@ -35,20 +35,20 @@ export default function About() {
       </motion.div>
 
       {/* Kolom Kanan: LANYARD PHYSICS */}
-      <motion.div 
+      <motion.div
         initial={{ opacity: 0, x: 50 }}
         whileInView={{ opacity: 1, x: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.6 }}
         className="relative h-full min-h-[500px] flex items-center justify-center bg-[#111]/30 rounded-[2.5rem] border border-white/5 lg:border-none lg:bg-transparent"
       >
-         {/* Panggil komponen Lanyard di sini */}
-         <Lanyard />
-         
-         {/* Teks Hint Kecil */}
-         <div className="absolute bottom-10 text-center text-gray-600 text-sm animate-bounce">
-            Grab the card & drag! 👆
-         </div>
+        {/* Panggil komponen Lanyard di sini */}
+        <Lanyard />
+
+        {/* Teks Hint Kecil */}
+        <div className="absolute bottom-10 text-center text-gray-600 text-sm animate-bounce">
+          Grab the card & drag! 👆
+        </div>
       </motion.div>
 
     </section>

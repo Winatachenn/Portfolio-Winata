@@ -8,15 +8,15 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
   // Judul di Tab Browser
   title: "Winata Chen | Front-End & Mobile Developer",
-  
+
   // Deskripsi yang muncul di Google
   description: "Portfolio of Winata Chen, an Informatics student at UMN specializing in Android Development (Kotlin), Web (Next.js), and AI Engineering.",
-  
+
   // Kata kunci untuk SEO
   keywords: ["Winata Chen", "Portfolio", "Android Developer", "Front-End Developer", "React", "Next.js", "UMN", "Informatics"],
-  
+
   authors: [{ name: "Winata Chen", url: "https://github.com/Winatachenn" }],
-  
+
   // Pengaturan Open Graph (Tampilan saat share di WA/LinkedIn/Twitter)
   openGraph: {
     title: "Winata Chen | Portfolio",

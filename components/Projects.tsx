@@ -1,6 +1,7 @@
 "use client";
+import { useState } from "react";
 import Link from "next/link";
-import { Code2, Smartphone, Gamepad2, ArrowRight, BrainCircuit, Terminal } from "lucide-react";
+import { Code2, Smartphone, Gamepad2, ArrowRight, BrainCircuit, Terminal, ImageIcon } from "lucide-react";
 import { motion } from "framer-motion";
 
 export default function Projects() {
@@ -12,7 +13,10 @@ export default function Projects() {
       desc: "Machine Learning model (SVM) designed to detect fake reviews (Bot vs Human) in e-commerce, achieving 91% accuracy.",
       tech: ["Python", "SVM", "Scikit-Learn", "AI"],
       icon: <BrainCircuit className="w-6 h-6" />,
-      color: "text-rose-400 bg-rose-400/10"
+      color: "text-rose-400 bg-rose-400/10",
+      // Ganti path ini dengan screenshot project kamu
+      // Taruh file gambar di folder public/projects/
+      image: "/projects/fake-review.png"
     },
     {
       title: "Englab App",
@@ -21,7 +25,8 @@ export default function Projects() {
       desc: "Android-based English learning application. Features a responsive and user-friendly UI built with Kotlin & XML.",
       tech: ["Kotlin", "XML", "Android SDK"],
       icon: <Smartphone className="w-6 h-6" />,
-      color: "text-green-400 bg-green-400/10"
+      color: "text-green-400 bg-green-400/10",
+      image: "/projects/englab.png"
     },
     {
       title: "Banten Pro",
@@ -30,7 +35,8 @@ export default function Projects() {
       desc: "Web-based tourism promotion platform for Banten. Built with React.js and Node.js for dynamic content rendering.",
       tech: ["React.js", "Node.js", "Web Dev"],
       icon: <Code2 className="w-6 h-6" />,
-      color: "text-blue-400 bg-blue-400/10"
+      color: "text-blue-400 bg-blue-400/10",
+      image: "/projects/banten-pro.png"
     },
     {
       title: "Zombie Forest",
@@ -39,7 +45,8 @@ export default function Projects() {
       desc: "3D survival game developed in Unity. Implemented AI Navigation (NavMesh) for intelligent enemy behavior and logic.",
       tech: ["Unity", "C#", "3D Game"],
       icon: <Gamepad2 className="w-6 h-6" />,
-      color: "text-purple-400 bg-purple-400/10"
+      color: "text-purple-400 bg-purple-400/10",
+      image: "/projects/zombie-forest.png"
     },
     {
       title: "Ticket Reservation System",
@@ -48,13 +55,14 @@ export default function Projects() {
       desc: "Console-based booking system enabling users to manage reservations. Features full CRUD functionality and file-based storage.",
       tech: ["C++", "Algorithms", "File Handling"],
       icon: <Terminal className="w-6 h-6" />,
-      color: "text-yellow-400 bg-yellow-400/10"
+      color: "text-yellow-400 bg-yellow-400/10",
+      image: "/projects/ticket-system.png"
     }
   ];
 
   return (
     <section id="projects">
-      <motion.div 
+      <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
@@ -65,13 +73,14 @@ export default function Projects() {
           <p className="text-gray-500 text-lg">Highlight projects (Apps, Games, AI) 2023-2025</p>
         </div>
         <Link
-          href="https://github.com/username"
+          href="https://github.com/Winatachenn"
           target="_blank"
+          rel="noopener noreferrer"
           className="group hidden md:flex items-center"
         >
-        <div>
-          <p className="text-gray-500 text-lg">More Projects</p>
-        </div>
+          <div>
+            <p className="text-gray-500 text-lg">More Projects</p>
+          </div>
           <ArrowRight
             className="w-10 h-10 text-purple-500 -rotate-45
                       transition-all duration-300
@@ -84,43 +93,83 @@ export default function Projects() {
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
         {projects.map((project, index) => (
-          <motion.div 
+          <motion.div
             key={index}
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: index * 0.1 }}
             whileHover={{ y: -10 }}
-            className="group flex flex-col p-8 rounded-[2rem] bg-[#111] border border-white/5 hover:border-white/20 transition duration-300 relative overflow-hidden h-full"
+            className="group flex flex-col rounded-[2rem] bg-[#111] border border-white/5 hover:border-white/20 transition duration-300 relative overflow-hidden h-full"
           >
-            <div className="absolute inset-0 bg-gradient-to-br from-white/0 to-white/0 group-hover:to-white/5 transition duration-500"></div>
-
-            <div className="flex justify-between items-start mb-8 relative z-10">
-              <div className={`p-4 rounded-2xl ${project.color}`}>
-                {project.icon}
-              </div>
-              <span className="text-xs font-mono text-gray-400 border border-white/10 px-3 py-1.5 rounded-full bg-black/50 backdrop-blur-sm">
+            {/* Screenshot Area */}
+            <div className="relative w-full h-48 bg-[#0a0a0a] overflow-hidden border-b border-white/5">
+              <ProjectImage src={project.image} alt={project.title} />
+              {/* Year Badge over image */}
+              <span className="absolute top-4 right-4 text-xs font-mono text-gray-400 border border-white/10 px-3 py-1.5 rounded-full bg-black/70 backdrop-blur-sm z-10">
                 {project.year}
               </span>
             </div>
-            
-            <h3 className="text-2xl font-bold text-white mb-3 group-hover:text-purple-400 transition relative z-10">
-              {project.title}
-            </h3>
-            <p className="text-gray-400 text-base mb-8 line-clamp-4 leading-relaxed relative z-10">
-              {project.desc}
-            </p>
 
-            <div className="flex flex-wrap gap-2 mt-auto relative z-10">
-              {project.tech.map((t, i) => (
-                <span key={i} className="text-xs text-gray-400 bg-white/5 px-3 py-1.5 rounded-lg border border-white/5">
-                  #{t}
+            {/* Content */}
+            <div className="flex flex-col flex-1 p-8">
+              <div className="absolute inset-0 bg-gradient-to-br from-white/0 to-white/0 group-hover:to-white/5 transition duration-500"></div>
+
+              <div className="flex items-center gap-3 mb-4 relative z-10">
+                <div className={`p-3 rounded-xl ${project.color}`}>
+                  {project.icon}
+                </div>
+                <span className="text-xs font-medium text-gray-500 uppercase tracking-wider">
+                  {project.role}
                 </span>
-              ))}
+              </div>
+
+              <h3 className="text-2xl font-bold text-white mb-3 group-hover:text-purple-400 transition relative z-10">
+                {project.title}
+              </h3>
+              <p className="text-gray-400 text-base mb-8 line-clamp-3 leading-relaxed relative z-10">
+                {project.desc}
+              </p>
+
+              <div className="flex flex-wrap gap-2 mt-auto relative z-10">
+                {project.tech.map((t, i) => (
+                  <span key={i} className="text-xs text-gray-400 bg-white/5 px-3 py-1.5 rounded-lg border border-white/5">
+                    #{t}
+                  </span>
+                ))}
+              </div>
             </div>
           </motion.div>
         ))}
       </div>
     </section>
+  );
+}
+
+// Komponen untuk handle gambar: tampilkan placeholder jika file belum ada
+function ProjectImage({ src, alt }: { src: string; alt: string }) {
+  const [loaded, setLoaded] = useState(false);
+  const [error, setError] = useState(false);
+
+  return (
+    <div className="relative w-full h-full">
+      {/* Placeholder — tampil jika gambar belum tersedia */}
+      {!loaded && (
+        <div className="absolute inset-0 bg-gradient-to-br from-[#111] to-[#1a1a2e] flex flex-col items-center justify-center gap-3 text-gray-600">
+          <ImageIcon className="w-10 h-10 opacity-30" />
+          <span className="text-xs opacity-40 font-mono">screenshot coming soon</span>
+        </div>
+      )}
+      {/* Gambar asli — akan tampil jika file sudah tersedia */}
+      {!error && (
+        <img
+          src={src}
+          alt={alt}
+          className={`absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-500 ${loaded ? "opacity-100" : "opacity-0"}`}
+          onLoad={() => setLoaded(true)}
+          onError={() => setError(true)}
+        />
+      )}
+    </div>
   );
 }
