@@ -16,7 +16,7 @@ const skills = {
     { name: "C", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/c/c-original.svg", color: "border-blue-500/50 shadow-blue-500/20" },
     { name: "C++", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/cplusplus/cplusplus-original.svg", color: "border-indigo-500/50 shadow-indigo-500/20" },
     { name: "Java", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original.svg", color: "border-red-500/50 shadow-red-500/20" },
-    { name: "PHP", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/php/php-original.svg", color: "border-purple-500/50 shadow-purple-500/20" },
+    { name: "PHP", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/php/php-original.svg", color: "border-white/30 shadow-white/20" },
     { name: "Python", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg", color: "border-yellow-500/50 shadow-yellow-500/20" },
     { name: "JavaScript", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg", color: "border-yellow-400/50 shadow-yellow-400/20" },
     { name: "HTML", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg", color: "border-orange-500/50 shadow-orange-500/20" },
@@ -53,7 +53,7 @@ export default function TechStack() {
         <h2 className="text-4xl md:text-5xl font-bold text-white tracking-tight">
           Tech Stack
         </h2>
-        <p className="text-gray-400 text-lg max-w-2xl mx-auto">
+        <p className="text-muted text-lg max-w-2xl mx-auto">
           Technologies and tools I use to build seamless digital experiences.
         </p>
       </div>
@@ -64,7 +64,7 @@ export default function TechStack() {
           <button
             key={tab.id}
             onClick={() => setActiveTab(tab.id)}
-            className={`relative px-6 py-3 rounded-full text-sm font-medium transition-all duration-300 ${activeTab === tab.id ? "text-white" : "text-gray-500 hover:text-gray-300"
+            className={`relative px-6 py-3 rounded-full text-sm font-medium transition-all duration-300 ${activeTab === tab.id ? "text-white" : "text-gray-500 hover:text-muted"
               }`}
           >
             {activeTab === tab.id && (
@@ -97,7 +97,7 @@ export default function TechStack() {
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ delay: index * 0.05 }}
                 whileHover={{ scale: 1.08, y: -8 }}
-                className={`flex flex-col items-center justify-center p-6 rounded-2xl bg-[#111] border ${skill.color.split(" ")[0]} hover:shadow-[0_0_30px_-5px] ${skill.color.split(" ")[1]} transition-all duration-300 group cursor-default`}
+                className={`flex flex-col items-center justify-center p-6 rounded-2xl bg-card border ${skill.color.split(" ")[0]} hover:shadow-[0_0_30px_-5px] ${skill.color.split(" ")[1]} transition-all duration-300 group cursor-default`}
               >
                 {/* Real SVG Icon */}
                 <div className="mb-4 p-3 rounded-xl bg-white/5 group-hover:bg-white/10 group-hover:scale-110 transition-all duration-300">
@@ -111,7 +111,7 @@ export default function TechStack() {
                   />
                 </div>
 
-                <h3 className="font-semibold text-sm text-gray-300 group-hover:text-white transition-colors text-center">
+                <h3 className="font-semibold text-sm text-muted group-hover:text-white transition-colors text-center">
                   {skill.name}
                 </h3>
               </motion.div>

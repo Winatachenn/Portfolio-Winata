@@ -8,9 +8,18 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        sans: ['"SF Pro Display"', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
+      },
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
+        primary: "var(--primary)",
+        "primary-soft": "var(--primary-soft)",
+        secondary: "var(--secondary)",
+        muted: "var(--muted)",
+        card: "var(--card)",
+        border: "var(--border)",
       },
     },
   },

@@ -10,7 +10,8 @@ export default function Navbar() {
 
   const navLinks = [
     { name: "About", href: "#about" },
-    { name: "Tech Stack", href: "#techstack" }, 
+    { name: "Experience", href: "#experience" },
+    { name: "Tech Stack", href: "#techstack" },
     { name: "Projects", href: "#projects" },
     { name: "Contact", href: "#contact" },
   ];
@@ -19,13 +20,13 @@ export default function Navbar() {
 
   const menuVars: Variants = {
     initial: { scaleY: 0 },
-    animate: { 
-      scaleY: 1, 
-      transition: { duration: 0.5, ease: [0.12, 0, 0.39, 0] } 
+    animate: {
+      scaleY: 1,
+      transition: { duration: 0.5, ease: [0.12, 0, 0.39, 0] }
     },
-    exit: { 
-      scaleY: 0, 
-      transition: { delay: 0.5, duration: 0.5, ease: [0.22, 1, 0.36, 1] } 
+    exit: {
+      scaleY: 0,
+      transition: { delay: 0.5, duration: 0.5, ease: [0.22, 1, 0.36, 1] }
     }
   };
 
@@ -44,33 +45,33 @@ export default function Navbar() {
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.8, ease: "circOut" }}
-      className="fixed top-0 w-full z-50 backdrop-blur-md border-b border-white/5 bg-[#0a0a0a]/80"
+      className="fixed top-0 w-full z-50 backdrop-blur-md border-b border-white/5 bg-background/80"
     >
       <div className="max-w-7xl mx-auto px-6 md:px-12 h-20 flex items-center justify-between">
-        
+
         {/* LOGO */}
-        <Link href="/" className="font-bold text-2xl tracking-tight bg-gradient-to-r from-purple-400 to-pink-600 bg-clip-text text-transparent z-50 relative">
+        <Link href="/" className="font-bold text-2xl tracking-tight bg-gradient-to-r from-white to-primary bg-clip-text text-transparent z-50 relative">
           Winata Chen
         </Link>
 
         {/* DESKTOP MENU (Hidden di Mobile) */}
-        <div className="hidden md:flex gap-8 text-sm font-medium text-gray-400">
+        <div className="hidden md:flex gap-8 text-sm font-medium text-muted">
           {navLinks.map((item) => (
-            <Link 
-              key={item.name} 
-              href={item.href} 
+            <Link
+              key={item.name}
+              href={item.href}
               className="hover:text-white transition relative group"
             >
               {item.name}
-              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-purple-500 transition-all group-hover:w-full"></span>
+              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-white transition-all group-hover:w-full"></span>
             </Link>
           ))}
         </div>
 
         {/* MOBILE BURGER BUTTON (Visible di Mobile) */}
         <div className="md:hidden z-50">
-          <button 
-            onClick={() => setIsOpen(!isOpen)} 
+          <button
+            onClick={() => setIsOpen(!isOpen)}
             className="text-white focus:outline-none p-2"
           >
             {isOpen ? <X className="w-8 h-8" /> : <Menu className="w-8 h-8" />}
@@ -86,9 +87,9 @@ export default function Navbar() {
             initial="initial"
             animate="animate"
             exit="exit"
-            className="fixed left-0 top-0 w-full h-screen bg-[#0a0a0a] origin-top flex flex-col items-center justify-center p-10 z-40"
+            className="fixed left-0 top-0 w-full h-screen bg-background origin-top flex flex-col items-center justify-center p-10 z-40"
           >
-            <motion.div 
+            <motion.div
               variants={containerVars}
               initial="initial"
               animate="open"
@@ -98,10 +99,10 @@ export default function Navbar() {
               {navLinks.map((item) => (
                 <div key={item.name} className="overflow-hidden">
                   <motion.div variants={mobileLinkVars}>
-                    <Link 
-                      href={item.href} 
+                    <Link
+                      href={item.href}
                       onClick={() => setIsOpen(false)} // Tutup menu saat link diklik
-                      className="text-white hover:text-purple-400 transition"
+                      className="text-white hover:text-muted transition"
                     >
                       {item.name}
                     </Link>

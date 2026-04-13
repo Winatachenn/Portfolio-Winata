@@ -12,25 +12,40 @@ export default function About() {
         whileInView={{ opacity: 1, x: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.6 }}
-        className="h-full min-h-[500px] p-8 lg:p-12 rounded-[2.5rem] bg-[#111] border border-white/5 relative overflow-hidden flex flex-col justify-center"
+        className="h-full min-h-[500px] p-8 lg:p-12 rounded-[2.5rem] bg-card border border-white/5 relative overflow-hidden flex flex-col justify-center"
       >
         <h3 className="text-4xl font-bold text-white mb-8 flex items-center gap-3">
-          About Me <span className="animate-pulse">👋</span>
+          About Me
         </h3>
-        <div className="text-gray-400 text-lg md:text-xl leading-relaxed space-y-6 relative z-10">
+
+        <div className="text-muted text-lg md:text-xl leading-relaxed space-y-6 relative z-10">
           <p>
-            I am an Informatics Engineering student at <strong className="text-white">Universitas Multimedia Nusantara</strong> with a strong focus on Front-End Development for both web and mobile platforms.
+            I’m an Informatics Engineering student at{" "}
+            <strong className="text-white">Universitas Multimedia Nusantara</strong>, currently working as an{" "}
+            <strong className="text-white">AI Engineer Intern</strong> at{" "}
+            <strong className="text-white">PT Salam Pacific Indonesia Lines (SPIL)</strong>.
           </p>
+
           <p>
-            I am highly detail-oriented, adaptable, and quick to learn new technologies. I enjoy solving complex problems and turning ideas into interactive reality.
+            I enjoy turning complex ideas especially in AI and machine learning into practical, real world solutions.
+            Recently, I’ve been focused on building systems that automate industrial workflows, making processes
+            faster, smarter, and more reliable.
           </p>
+
           <p>
-            Currently, I am actively seeking a <strong className="text-white">Front-End Developer</strong> or <strong className="text-white">Android Developer</strong> internship to apply my skills in a professional environment.
+            What I find most interesting is bridging the gap between AI models and production ready software.
+            Whether it’s optimizing OCR pipelines for large scale document processing or building web applications
+            with Next.js, I like working on things that actually get used.
+          </p>
+
+          <p>
+            Outside of coding, I see myself as someone who connects the dots between data, systems, and people.
+            I’m always open to learning, collaborating, and exploring new opportunities in AI and software engineering.
           </p>
         </div>
 
         {/* Hiasan Background Abstrak */}
-        <div className="absolute top-0 right-0 w-64 h-64 bg-purple-500/10 blur-[100px] rounded-full"></div>
+        <div className="absolute top-0 right-0 w-64 h-64 bg-white/10 blur-[100px] rounded-full"></div>
         <div className="absolute bottom-0 left-0 w-40 h-40 bg-blue-500/10 blur-[80px] rounded-full"></div>
       </motion.div>
 
@@ -40,7 +55,7 @@ export default function About() {
         whileInView={{ opacity: 1, x: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.6 }}
-        className="relative h-full min-h-[500px] flex items-center justify-center bg-[#111]/30 rounded-[2.5rem] border border-white/5 lg:border-none lg:bg-transparent"
+        className="relative h-full min-h-[500px] flex items-center justify-center bg-card/30 rounded-[2.5rem] border border-white/5 lg:border-none lg:bg-transparent"
       >
         {/* Panggil komponen Lanyard di sini */}
         <Lanyard />

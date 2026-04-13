@@ -1,9 +1,5 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
 import "./globals.css";
-
-// Mengambil font Inter dari Google Fonts
-const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   // Judul di Tab Browser
@@ -44,7 +40,7 @@ export default function RootLayout({
   return (
     // 'scroll-smooth' membuat efek scroll jadi halus saat klik navbar
     <html lang="en" className="scroll-smooth">
-      <body className={inter.className}>{children}</body>
+      <body className="font-sans antialiased">{children}</body>
     </html>
   );
 }
