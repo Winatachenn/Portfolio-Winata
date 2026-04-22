@@ -1,13 +1,33 @@
 "use client";
-import { useState } from "react";
+import { useState, ReactNode } from "react";
 import Link from "next/link";
 import { Code2, Smartphone, Gamepad2, ArrowRight, BrainCircuit, Terminal, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
-export default function Projects() {
-  const [selectedProject, setSelectedProject] = useState<any>(null);
+// 1. KITA BUAT TIPE DATA (INTERFACE) DI SINI BIAR TYPESCRIPT NGGAK MARAH
+interface ProjectLink {
+  name: string;
+  url: string;
+}
 
-  const projects = [
+interface Project {
+  title: string;
+  role: string;
+  year: string;
+  desc: string;
+  tech: string[];
+  keyContributions: string[];
+  links: ProjectLink[];
+  icon: ReactNode;
+  color: string;
+  image: string;
+}
+
+export default function Projects() {
+  // 2. GANTI <any> JADI <Project | null>
+  const [selectedProject, setSelectedProject] = useState<Project | null>(null);
+
+  const projects: Project[] = [
     {
       title: "Fake Review Detection",
       role: "AI Engineer",
@@ -117,7 +137,7 @@ export default function Projects() {
       icon: <Terminal className="w-6 h-6" />,
       color: "text-yellow-400 bg-yellow-400/10",
       image: "/projects/ticket-system.png"
-    },
+    }
   ];
 
   return (
@@ -264,7 +284,8 @@ export default function Projects() {
                   <div>
                     <h4 className="text-lg font-semibold text-white mb-3">Links</h4>
                     <div className="flex flex-wrap gap-3">
-                      {selectedProject.links.map((link: any, i: number) => (
+                      {/* 3. GANTI TIPE DATA LINK DI SINI DARI any JADI ProjectLink */}
+                      {selectedProject.links.map((link: ProjectLink, i: number) => (
                         <Link
                           key={i}
                           href={link.url}
